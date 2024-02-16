@@ -6,7 +6,7 @@
 /*   By: dkremer <dkremer@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 19:15:34 by dkremer           #+#    #+#             */
-/*   Updated: 2024/02/15 20:31:58 by dkremer          ###   ########.fr       */
+/*   Updated: 2024/02/16 19:33:03 by dkremer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,7 @@ typedef struct s_game
 	int				moves;
 	int				collectible;
 	int				ex_count;
+	char			*line;
 	mlx_texture_t	*wall_texture;
 	mlx_texture_t	*floor_texture;
 	mlx_texture_t	*player_texture;
@@ -66,12 +67,11 @@ void				error(char *str);
 void				load_image(t_game *img);
 void				image_to_win(int x, int y, char c, t_game *img);
 int					render_img(t_game *img);
-int					map_file_check(char *filename);
+void				map_file_check(char *filename);
 int					quit_game(t_game *game);
 void				keyhooks(mlx_key_data_t keydata, void *param);
 void				free_img(t_game *game);
 void				free_map(t_game *game);
-int					map_file_check(char *filename);
 void				file_to_map(t_game *game, int fd);
 void				save_map(char *file, t_game *game);
 void				find_player_position(t_game *game);
@@ -89,5 +89,6 @@ void				free_f_map(t_game *game);
 void				get_f_map(t_game *game);
 int					symbols_present(t_game *game);
 void				check_path(t_game *game);
+void	nl_in_map(t_game *game);
 
 #endif

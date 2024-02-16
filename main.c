@@ -6,7 +6,7 @@
 /*   By: dkremer <dkremer@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 15:52:27 by dkremer           #+#    #+#             */
-/*   Updated: 2024/02/15 19:48:06 by dkremer          ###   ########.fr       */
+/*   Updated: 2024/02/16 16:19:08 by dkremer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,18 +26,6 @@ void	game_init(t_game *game)
 	mlx_loop(game->mlx);
 }
 
-t_game	*init(void)
-{
-	t_game	*game;
-
-	game = ft_calloc(sizeof(t_game), 1);
-	if (!game)
-		error("MEMORY ALLOCATION FOR STRUCTURE FAILED");
-	game->width = 0;
-	game->height = 0;
-	return (game);
-}
-
 int	main(int argc, char **argv)
 {
 	t_game	*game;
@@ -45,7 +33,9 @@ int	main(int argc, char **argv)
 	if (argc != 2)
 		error("NEED 2 ARGUMENTS: PROGRAMM AND MAP!");
 	map_file_check(argv[1]);
-	game = init();
+	game = ft_calloc(sizeof(t_game), 1);
+	if (!game)
+		error("MEMORY ALLOCATION FOR STRUCTURE FAILED");
 	save_map(argv[1], game);
 	find_c(game);
 	check_chars(game);

@@ -6,7 +6,7 @@
 /*   By: dkremer <dkremer@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 19:15:34 by dkremer           #+#    #+#             */
-/*   Updated: 2024/02/16 19:33:03 by dkremer          ###   ########.fr       */
+/*   Updated: 2024/02/16 19:57:59 by dkremer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,6 +89,6 @@ void				free_f_map(t_game *game);
 void				get_f_map(t_game *game);
 int					symbols_present(t_game *game);
 void				check_path(t_game *game);
-void	nl_in_map(t_game *game);
+void				nl_in_map(t_game *game);
 
 #endif

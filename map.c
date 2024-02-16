@@ -6,10 +6,11 @@
 /*   By: dkremer <dkremer@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 16:11:42 by dkremer           #+#    #+#             */
-/*   Updated: 2024/02/16 19:36:46 by dkremer          ###   ########.fr       */
+/*   Updated: 2024/02/16 21:43:03 by dkremer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft/include/libft.h"
 #include "so_long.h"
 
 void	map_file_check(char *filename)
@@ -69,7 +70,7 @@ void	nl_in_map(t_game *game)
 	int	i;
 
 	i = 0;
-	while (game->map_temp[i] + 1)
+	while (game->map_temp[i + 1])
 	{
 		if (game->map_temp[i] == '\n' && game->map_temp[i + 1] == '\n')
 			error("EMPTY LINE IN MIDDLE OF MAP!");

@@ -12,10 +12,10 @@ CFLAGS   = -g -Wall -Werror -Wextra
 MLXFLAGS = -ldl -lglfw -pthread -lm
 
 # Source files
-SRCS     = $(wildcard libft/*.c ./*.c)
+SRCS     = map.c check.c find_stuff.c free_and_quit.c keyhooks.c main.c textures.c
 
 # Header files
-HEADERS  = libft/libft.h
+HEADERS  = libft/libft.a
 
 # Object files
 OBJS     = $(SRCS:.c=.o)
@@ -27,7 +27,7 @@ MLX      = ./MLX42/build/libmlx42.a
 all: $(NAME)
 
 $(NAME): $(HEADERS) $(MLX) $(OBJS)
-	@$(CC) $(CFLAGS) $(MLX) $(MLXFLAGS) -o $(NAME) $(OBJS)
+	@$(CC) $(CFLAGS) $(MLX) $(MLXFLAGS) $(HEADERS) -o $(NAME) $(OBJS)
 	@echo $(GREEN)"Building $(NAME)"$(DEFAULT);
 
 # MLX42 library
@@ -40,15 +40,20 @@ $(MLX):
 %.o: %.c
 	@$(CC) $(CFLAGS) -c $< -o $@
 
+#Linking libft
+$(HEADERS):
+	@make -C libft
+
 # Remove all object files
 clean:
 	@rm -f $(OBJS)
-	@echo $(RED)"Removing object files"$(DEFAULT);
+	@echo $(RED)"Removing so_long object files"$(DEFAULT);
 
 # Remove all files
 fclean: clean
 	@rm -f $(NAME)
 	@rm -rf MLX42
+	@make -C libft fclean
 	@echo $(RED)"Removing $(NAME) and MLX42"$(DEFAULT);
 
 # Rebuild everything

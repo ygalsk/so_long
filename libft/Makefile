@@ -6,9 +6,9 @@ CC 			= cc
 CFLAGS 	= -g -Wall -Werror -Wextra
 
 # Source files
-SRCS 		=	$(wildcard ./*.c)	
+SRCS 		=	$(wildcard ./gnl/*.c ./mem/*.c ./put/*.c ./str/*.c ./char/*.c ./conv/*.c ./printf/*.c)	
 # Header files
-HEADERS = libft.h
+HEADERS = ./include/libft.h
 
 # Object files
 OBJS 		= $(SRCS:.c=.o)
@@ -27,7 +27,7 @@ $(NAME): $(OBJS) $(HEADERS)
 # Remove all object files
 clean:
 	@rm -f $(OBJS)
-	@echo $(RED)"Removing object files"$(DEFAULT);
+	@echo $(RED)"Removing libft object files"$(DEFAULT);
 
 # Remove all files
 fclean: clean

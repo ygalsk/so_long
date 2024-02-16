@@ -15,7 +15,7 @@
 
 // include needed libs
 # include "MLX42/include/MLX42/MLX42.h"
-# include "libft/libft.h"
+# include "libft/include/libft.h"
 # include <fcntl.h>
 # include <stdio.h>
 # include <stdlib.h>
@@ -29,11 +29,11 @@
 # define FILL 'F'
 
 // define textures
-# define WALL_PNG "./assets/wall.png"
-# define FLOOR_PNG "./assets/floor.png"
-# define PLAYER_PNG "./assets/player.png"
-# define COLLECTIBLE_PNG "./assets/collectible.png"
-# define EXIT_PNG "./assets/exit.png"
+# define WALL_PNG "./textures/wall.png"
+# define FLOOR_PNG "./textures/floor.png"
+# define PLAYER_PNG "./textures/player.png"
+# define COLLECTIBLE_PNG "./textures/collectible.png"
+# define EXIT_PNG "./textures/exit.png"
 
 // Game struct definition
 typedef struct s_game

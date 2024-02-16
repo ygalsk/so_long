@@ -6,11 +6,10 @@
 /*   By: dkremer <dkremer@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 16:11:42 by dkremer           #+#    #+#             */
-/*   Updated: 2024/02/15 19:50:54 by dkremer          ###   ########.fr       */
+/*   Updated: 2024/02/16 15:50:00 by dkremer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/libft.h"
 #include "so_long.h"
 
 int	map_file_check(char *filename)

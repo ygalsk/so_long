@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   map.c                                              :+:      :+:    :+:   */
+/*   map_bonus.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dkremer <dkremer@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/12 16:11:42 by dkremer           #+#    #+#             */
-/*   Updated: 2024/02/17 18:13:24 by dkremer          ###   ########.fr       */
+/*   Created: 2024/02/17 17:04:33 by dkremer           #+#    #+#             */
+/*   Updated: 2024/02/17 18:21:39 by dkremer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "so_long_bonus.h"
 
 void	map_file_check(char *filename)
 {
@@ -76,5 +76,5 @@ void	nl_in_map(t_game *game)
 		i++;
 	}
 	if (game->map_temp[i] == '\n')
-		error("EMPTY LINE AT THE END!");
+		error("EMPTY LINE AT THE END");
 }

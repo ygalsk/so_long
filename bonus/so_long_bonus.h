@@ -1,21 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.h                                          :+:      :+:    :+:   */
+/*   so_long_bonus.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dkremer <dkremer@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/16 19:15:34 by dkremer           #+#    #+#             */
-/*   Updated: 2024/02/17 17:08:15 by dkremer          ###   ########.fr       */
+/*   Created: 2024/02/17 17:06:47 by dkremer           #+#    #+#             */
+/*   Updated: 2024/02/17 17:07:21 by dkremer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SO_LONG_H
-# define SO_LONG_H
+#ifndef SO_LONG_BONUS_H
+# define SO_LONG_BONUS_H
 
 // include needed libs
-# include "MLX42/include/MLX42/MLX42.h"
-# include "libft/include/libft.h"
+# include "../MLX42/include/MLX42/MLX42.h"
+# include "../libft/include/libft.h"
 # include <fcntl.h>
 # include <stdio.h>
 # include <stdlib.h>
@@ -61,6 +61,8 @@ typedef struct s_game
 	mlx_image_t		*player_images;
 	mlx_image_t		*colle_images;
 	mlx_image_t		*exit_images;
+	mlx_image_t		*screen_moves;
+	mlx_image_t		*screen_collectibles;
 }					t_game;
 
 void				error(char *str);
@@ -91,5 +93,6 @@ int					symbols_present(t_game *game);
 void				check_path(t_game *game);
 void				nl_in_map(t_game *game);
 void				get_to_exit(t_game *game);
+void				put_on_screen(t_game *game);
 
 #endif

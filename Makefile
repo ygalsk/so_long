@@ -60,24 +60,34 @@ $(HEADER):
 # Remove all object files
 clean:
 	@rm -f $(OBJS)
-	@rm -f $(OBJS_BONUS)
 	@make -C libft clean
 	@echo $(RED)"Removing $(NAME) object files"$(DEFAULT);
 
 # Remove all files
 fclean: clean
 	@rm -f $(NAME)
-	@rm -f $(NAME_BONUS)
 	@rm -rf MLX42
 	@make -C libft fclean
 	@echo $(RED)"Removing $(NAME) and MLX42 "$(DEFAULT);
+
+clean_bonus:
+	@rm -f $(OBJS_BONUS)
+	@make -C libft clean
+	@echo $(RED)"Removing $(NAME_BONUS) object files"$(DEFAULT);
+
+# Remove all files
+fclean_bonus: clean_bonus
+	@rm -f $(NAME_BONUS)
+	@rm -rf MLX42
+	@make -C libft fclean
+	@echo $(RED)"Removing $(NAME_BONUS) and MLX42 "$(DEFAULT);
 
 # Rebuild everything
 re: fclean all
 	@echo $(GREEN)"Rebuilding everything"$(DEFAULT);
 
-rebonus: fclean bonus
-.PHONY: all clean fclean re
+re_bonus: fclean bonus
+.PHONY: all clean fclean re re_bonus
 
 # Colours
 DEFAULT = "\033[39m"

@@ -6,7 +6,7 @@
 /*   By: dkremer <dkremer@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 17:48:41 by dkremer           #+#    #+#             */
-/*   Updated: 2024/02/17 16:48:59 by dkremer          ###   ########.fr       */
+/*   Updated: 2024/02/17 21:36:33 by dkremer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,8 @@ void	find_ex(t_game *game)
 
 int	symbols_present(t_game *game)
 {
-	int		y;
-	int		x;
+	int	y;
+	int	x;
 
 	y = 0;
 	while (y < game->height)
@@ -109,8 +109,8 @@ void	get_c(t_game *game)
 		load_map(x, y, game->map[y][x], game);
 		game->player_posx = x;
 		game->player_posy = y;
-		mlx_image_to_window(game->mlx, game->player_images, game->player_posx \
-											* 64, game->player_posy * 64);
+		mlx_image_to_window(game->mlx, game->player_images, \
+								game->player_posx * 64, game->player_posy * 64);
 		get_to_exit(game);
 	}
 	if (game->map[y][x] == EXIT)

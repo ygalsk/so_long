@@ -6,7 +6,7 @@
 /*   By: dkremer <dkremer@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 19:15:34 by dkremer           #+#    #+#             */
-/*   Updated: 2024/02/17 17:08:15 by dkremer          ###   ########.fr       */
+/*   Updated: 2024/02/17 21:36:05 by dkremer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,16 +17,21 @@
 # include "MLX42/include/MLX42/MLX42.h"
 # include "libft/include/libft.h"
 # include <fcntl.h>
-# include <stdio.h>
-# include <stdlib.h>
 
-// define map
-# define WALL '1'
-# define FLOOR '0'
-# define PLAYER 'P'
-# define COLLECTIBLE 'C'
-# define EXIT 'E'
-# define FILL 'F'
+// define map and Keys
+typedef enum e_elements
+{
+	WALL = '1',
+	FLOOR = '0',
+	PLAYER = 'P',
+	COLLECTIBLE = 'C',
+	EXIT = 'E',
+	FILL = 'F',
+	W	= 'W',
+	S	= 'S',
+	A	= 'A',
+	D	= 'D',
+}	t_elements;
 
 // define textures
 # define WALL_PNG "./textures/wall.png"

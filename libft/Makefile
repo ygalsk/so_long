@@ -30,7 +30,8 @@ clean:
 	@echo $(RED)"Removing libft object files"$(DEFAULT);
 
 # Remove all files
-fclean: clean
+fclean:
+	@rm -f $(OBJS)
 	@rm -f $(NAME)
 	@echo $(RED)"Removing $(NAME)"$(DEFAULT);
 

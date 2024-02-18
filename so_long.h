@@ -6,7 +6,7 @@
 /*   By: dkremer <dkremer@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 19:15:34 by dkremer           #+#    #+#             */
-/*   Updated: 2024/02/17 21:36:05 by dkremer          ###   ########.fr       */
+/*   Updated: 2024/02/18 15:08:00 by dkremer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,7 @@ void				move_x(t_game *game, char key);
 void				find_c(t_game *game);
 void				get_c(t_game *game);
 void				load_player(t_game *game);
-void				image_in_map(int x, int y, char c, t_game *img);
+void				image_in_map(int x, int y, char c, t_game *game);
 void				load_map(int x, int y, char c, t_game *img);
 void				check_chars(t_game *game);
 void				find_ex(t_game *game);

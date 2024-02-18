@@ -6,7 +6,7 @@
 /*   By: dkremer <dkremer@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 13:55:40 by dkremer           #+#    #+#             */
-/*   Updated: 2024/02/14 14:37:38 by dkremer          ###   ########.fr       */
+/*   Updated: 2024/02/18 14:48:59 by dkremer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,16 +26,16 @@ void	load_image(t_game *game)
 	game->floor_images = mlx_texture_to_image(game->mlx, game->floor_texture);
 }
 
-void	image_in_map(int x, int y, char c, t_game *img)
+void	image_in_map(int x, int y, char c, t_game *game)
 {
 	if (c == FLOOR || c == EXIT || c == COLLECTIBLE || c == PLAYER)
-		mlx_image_to_window(img->mlx, img->floor_images, x * 64, y * 64);
+		mlx_image_to_window(game->mlx, game->floor_images, x * 64, y * 64);
 	if (c == EXIT)
-		mlx_image_to_window(img->mlx, img->exit_images, x * 64, y * 64);
+		mlx_image_to_window(game->mlx, game->exit_images, x * 64, y * 64);
 	if (c == WALL)
-		mlx_image_to_window(img->mlx, img->wall_images, x * 64, y * 64);
+		mlx_image_to_window(game->mlx, game->wall_images, x * 64, y * 64);
 	if (c == COLLECTIBLE)
-		mlx_image_to_window(img->mlx, img->colle_images, x * 64, y * 64);
+		mlx_image_to_window(game->mlx, game->colle_images, x * 64, y * 64);
 }
 
 int	render_img(t_game *game)

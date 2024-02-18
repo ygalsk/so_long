@@ -17,7 +17,7 @@ MLXFLAGS = -ldl -lglfw -pthread -lm
 SRCS     = map.c check.c find_stuff.c free_and_quit.c keyhooks.c main.c textures.c
 
 SRCS_BONUS = ./bonus/map_bonus.c ./bonus/check_bonus.c ./bonus/find_stuff_bonus.c ./bonus/free_and_quit_bonus.c \
-						 ./bonus/keyhooks_bonus.c ./bonus/main_bonus.c ./bonus/textures_bonus.c
+						 ./bonus/keyhooks_bonus.c ./bonus/main_bonus.c ./bonus/textures_bonus.c ./bonus/screen_msgs.c ./bonus/animations.c
  
 # Header files
 HEADER  = libft/libft.a
@@ -36,11 +36,11 @@ all: $(NAME)
 bonus: $(NAME_BONUS)
 
 $(NAME): $(HEADER) $(MLX) $(OBJS)
-	@$(CC) $(CFLAGS) $(MLX) $(MLXFLAGS) $(HEADER) -o $(NAME) $(OBJS)
+	@$(CC) $(CFLAGS) -o $(NAME) $(OBJS) $(MLX) $(MLXFLAGS) $(HEADER)
 	@echo $(GREEN)"Building $(NAME)"$(DEFAULT);
 
 $(NAME_BONUS): $(HEADER) $(MLX) $(OBJS_BONUS)
-	@$(CC) $(CFLAGS) $(MLX) $(MLXFLAGS) $(HEADER) -o $(NAME_BONUS) $(OBJS_BONUS)
+	@$(CC) $(CFLAGS) -o $(NAME_BONUS) $(OBJS_BONUS) $(MLX) $(MLXFLAGS) $(HEADER) 
 	@echo $(GREEN)"Building $(NAME_BONUS)"$(DEFAULT);
 
 # MLX42 library

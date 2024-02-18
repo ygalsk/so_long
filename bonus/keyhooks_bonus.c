@@ -6,7 +6,7 @@
 /*   By: dkremer <dkremer@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/17 16:57:32 by dkremer           #+#    #+#             */
-/*   Updated: 2024/02/17 18:50:39 by dkremer          ###   ########.fr       */
+/*   Updated: 2024/02/18 20:44:25 by dkremer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,23 +43,9 @@ void	move_y(t_game *game, char key)
 	x = game->player_posx;
 	y = game->player_posy;
 	if (key == W)
-	{
-		if (game->map[y - 1][x] == WALL)
-			return ;
-		game->player_posy -= 1;
-		game->moves++;
-		game->player_images->instances[0].y = game->player_posy * 64;
-		game->player_images->instances[0].x = game->player_posx * 64;
-	}
+		player_w(game);
 	if (key == S)
-	{
-		if (game->map[y + 1][x] == WALL)
-			return ;
-		game->player_posy += 1;
-		game->moves++;
-		game->player_images->instances[0].y = game->player_posy * 64;
-		game->player_images->instances[0].x = game->player_posx * 64;
-	}
+		player_s(game);
 	ft_printf("Moves: %d\n", game->moves);
 	get_c(game);
 }
@@ -72,23 +58,9 @@ void	move_x(t_game *game, char key)
 	x = game->player_posx;
 	y = game->player_posy;
 	if (key == A)
-	{
-		if (game->map[y][x - 1] == WALL)
-			return ;
-		game->player_posx -= 1;
-		game->moves++;
-		game->player_images->instances[0].y = game->player_posy * 64;
-		game->player_images->instances[0].x = game->player_posx * 64;
-	}
+		player_a(game);
 	if (key == D)
-	{
-		if (game->map[y][x + 1] == WALL)
-			return ;
-		game->player_posx += 1;
-		game->moves++;
-		game->player_images->instances[0].y = game->player_posy * 64;
-		game->player_images->instances[0].x = game->player_posx * 64;
-	}
+		player_d(game);
 	ft_printf("Moves: %d\n", game->moves);
 	get_c(game);
 }
@@ -97,21 +69,4 @@ void	get_to_exit(t_game *game)
 {
 	if (game->collectible == 0)
 		ft_printf("HEAD TO EXIT NOW!\n");
-}
-
-void	put_on_screen(t_game *game)
-{
-	char	*moves;
-	char	*collects;
-
-	moves = ft_itoa(game->moves);
-	collects = ft_itoa(game->collectible);
-	if (moves)
-		mlx_delete_image(game->mlx, game->screen_moves);
-	if (collects)
-		mlx_delete_image(game->mlx, game->screen_collectibles);
-	game->screen_moves = mlx_put_string(game->mlx, moves, 0, 0);
-	game->screen_collectibles = mlx_put_string(game->mlx, collects, 0, 10);
-	free(moves);
-	free(collects);
 }

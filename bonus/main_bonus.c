@@ -6,7 +6,7 @@
 /*   By: dkremer <dkremer@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/17 17:04:06 by dkremer           #+#    #+#             */
-/*   Updated: 2024/02/17 17:09:23 by dkremer          ###   ########.fr       */
+/*   Updated: 2024/02/18 20:45:49 by dkremer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,22 @@
 void	game_init(t_game *game)
 {
 	mlx_set_setting(MLX_STRETCH_IMAGE, true);
-	game->mlx = mlx_init(game->width * 64, game->height * 64, "so_long", true);
+	game->mlx = mlx_init(game->width * PIXEL, game->height * PIXEL, "so_long", true);
 	if (!game->mlx)
 		error("GAME INITIALIZATION FAILED!");
 	load_image(game);
 	render_img(game);
-	mlx_image_to_window(game->mlx, game->player_images, game->player_posx * 64, \
-											game->player_posy * 64);
+	mlx_image_to_window(game->mlx, game->player_images1, game->player_posx \
+			* PIXEL, game->player_posy * PIXEL);
+	mlx_image_to_window(game->mlx, game->player_images2, game->player_posx \
+			* PIXEL, game->player_posy * PIXEL);
+	game->player_images2->instances->enabled = false;
+	mlx_image_to_window(game->mlx, game->player_images3, game->player_posx \
+			* PIXEL, game->player_posy * PIXEL);
+	game->player_images3->instances->enabled = false;
+	mlx_image_to_window(game->mlx, game->player_images4, game->player_posx \
+			* PIXEL, game->player_posy * PIXEL);
+	game->player_images4->instances->enabled = true;
 	mlx_key_hook(game->mlx, keyhooks, game);
 	mlx_loop(game->mlx);
 }
@@ -33,7 +42,7 @@ void	leaks(void)
 
 int	main(int argc, char **argv)
 {
-	t_game	*game;
+	t_game		*game;
 
 	if (argc != 2)
 		error("NEED 2 ARGUMENTS: PROGRAMM AND MAP!");

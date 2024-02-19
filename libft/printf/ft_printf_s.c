@@ -6,7 +6,7 @@
 /*   By: dkremer <dkremer@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 17:23:40 by dkremer           #+#    #+#             */
-/*   Updated: 2024/02/16 15:34:08 by dkremer          ###   ########.fr       */
+/*   Updated: 2024/02/19 03:51:03 by dkremer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,6 @@ int	ft_printf_s(char *str)
 	if (str == NULL)
 	{
 		i = write(1, "(null)", 6);
-		if (i < 0)
-			return (-1);
 		return (i);
 	}
 	while (*str)

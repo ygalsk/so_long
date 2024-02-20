@@ -6,7 +6,7 @@
 /*   By: dkremer <dkremer@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/17 16:57:32 by dkremer           #+#    #+#             */
-/*   Updated: 2024/02/18 20:44:25 by dkremer          ###   ########.fr       */
+/*   Updated: 2024/02/20 02:12:26 by dkremer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,11 +37,6 @@ void	keyhooks(mlx_key_data_t keydata, void *param)
 
 void	move_y(t_game *game, char key)
 {
-	int	x;
-	int	y;
-
-	x = game->player_posx;
-	y = game->player_posy;
 	if (key == W)
 		player_w(game);
 	if (key == S)
@@ -52,11 +47,6 @@ void	move_y(t_game *game, char key)
 
 void	move_x(t_game *game, char key)
 {
-	int	x;
-	int	y;
-
-	x = game->player_posx;
-	y = game->player_posy;
 	if (key == A)
 		player_a(game);
 	if (key == D)

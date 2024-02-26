@@ -6,7 +6,7 @@
 /*   By: dkremer <dkremer@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/17 17:04:33 by dkremer           #+#    #+#             */
-/*   Updated: 2024/02/17 18:21:39 by dkremer          ###   ########.fr       */
+/*   Updated: 2024/02/21 18:17:57 by dkremer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,6 +75,4 @@ void	nl_in_map(t_game *game)
 			error("EMPTY LINE IN MAP!");
 		i++;
 	}
-	if (game->map_temp[i] == '\n')
-		error("EMPTY LINE AT THE END");
 }

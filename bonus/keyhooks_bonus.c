@@ -6,7 +6,7 @@
 /*   By: dkremer <dkremer@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/17 16:57:32 by dkremer           #+#    #+#             */
-/*   Updated: 2024/02/20 02:12:26 by dkremer          ###   ########.fr       */
+/*   Updated: 2024/02/26 19:54:16 by dkremer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,8 +55,20 @@ void	move_x(t_game *game, char key)
 	get_c(game);
 }
 
+void	chech_exit(t_game *game)
+{
+	if (game->map[game->player->player_posy][game->player->player_posx] == EXIT \
+		&& game->left_collectible == 0)
+	{
+		if (game->left_collectible != 0)
+			return ;
+		ft_printf("CONGRATS!%s");
+		quit_game(game);
+	}
+}
+
 void	get_to_exit(t_game *game)
 {
-	if (game->collectible == 0)
+	if (game->left_collectible == 0)
 		ft_printf("HEAD TO EXIT NOW!\n");
 }

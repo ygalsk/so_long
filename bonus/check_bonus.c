@@ -6,7 +6,7 @@
 /*   By: dkremer <dkremer@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/17 17:00:54 by dkremer           #+#    #+#             */
-/*   Updated: 2024/02/18 19:28:23 by dkremer          ###   ########.fr       */
+/*   Updated: 2024/02/21 19:12:35 by dkremer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,13 @@
 void	check_chars(t_game *game)
 {
 	find_ex(game);
+	find_c(game);
 	find_player_position(game);
 	if (game->collectible == 0)
 		error("NO COLLECTIBLES!!!");
 	if (game->ex_count != 1)
 		error("NEED 1 EXIT!");
-	if (game->player_pos_found != 1)
+	if (game->player->player_pos_found != 1)
 		error("NEED 1 PLAYER!");
 	check_size_and_char(game);
 }
@@ -79,7 +80,7 @@ void	flood_fill(t_game *game, int y, int x)
 void	check_path(t_game *game)
 {
 	get_f_map(game);
-	flood_fill(game, game->player_posy, game->player_posx);
+	flood_fill(game, game->player->player_posy, game->player->player_posx);
 	if (symbols_present(game))
 		error("NO VALID PATH");
 }

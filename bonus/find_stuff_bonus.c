@@ -6,7 +6,7 @@
 /*   By: dkremer <dkremer@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/17 17:02:57 by dkremer           #+#    #+#             */
-/*   Updated: 2024/02/18 20:45:50 by dkremer          ###   ########.fr       */
+/*   Updated: 2024/02/26 17:54:20 by dkremer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,9 +64,9 @@ void	find_player_position(t_game *game)
 		{
 			if (game->map[y][x] == PLAYER)
 			{
-				game->player_posx = x;
-				game->player_posy = y;
-				game->player_pos_found++;
+				game->player->player_posx = x;
+				game->player->player_posy = y;
+				game->player->player_pos_found++;
 			}
 			x++;
 		}
@@ -97,27 +97,26 @@ void	get_c(t_game *game)
 {
 	int	y;
 	int	x;
+	int	i;
 
-	x = game->player_posx;
-	y = game->player_posy;
+	i = 0;
+	x = game->player->player_posx;
+	y = game->player->player_posy;
 	if (game->map[y][x] == COLLECTIBLE)
 	{
-		game->collectible--;
-		game->map[y][x] = FLOOR;
-		ft_printf("Collectibles left: %d\n", game->collectible);
-		load_player(game);
-		load_map(x, y, game->map[y][x], game);
-		game->player_posx = x;
-		game->player_posy = y;
-		mlx_image_to_window(game->mlx, game->player_images1, \
-				game->player_posx * PIXEL, game->player_posy * PIXEL);
-		get_to_exit(game);
+		while (i < game->collectible)
+		{
+			if (game->image->colle_images->instances[i].x == x * PIXEL
+				&& game->image->colle_images->instances[i].y == y * PIXEL)
+			{
+				game->map[y][x] = FLOOR;
+				game->image->colle_images->instances[i].enabled = false;
+				game->left_collectible--;
+				break ;
+			}
+			i++;
+		}
+		ft_printf("Collectibles left: %d\n", game->left_collectible);
 	}
-	if (game->map[y][x] == EXIT)
-	{
-		if (game->collectible != 0)
-			return ;
-		ft_printf("CONGRATS!%s");
-		quit_game(game);
-	}
+	chech_exit(game);
 }

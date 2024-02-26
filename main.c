@@ -6,7 +6,7 @@
 /*   By: dkremer <dkremer@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 15:52:27 by dkremer           #+#    #+#             */
-/*   Updated: 2024/02/17 20:55:54 by dkremer          ###   ########.fr       */
+/*   Updated: 2024/02/21 18:21:25 by dkremer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,18 +26,12 @@ void	game_init(t_game *game)
 	mlx_loop(game->mlx);
 }
 
-void	leaks(void)
-{
-	system("leaks so_long");
-}
-
 int	main(int argc, char **argv)
 {
 	t_game	*game;
 
 	if (argc != 2)
 		error("NEED 2 ARGUMENTS: PROGRAMM AND MAP!");
-	// atexit(&leaks);
 	map_file_check(argv[1]);
 	game = ft_calloc(1, sizeof(t_game));
 	if (!game)

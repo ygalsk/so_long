@@ -6,12 +6,11 @@
 /*   By: dkremer <dkremer@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 17:40:50 by dkremer           #+#    #+#             */
-/*   Updated: 2024/02/17 22:37:24 by dkremer          ###   ########.fr       */
+/*   Updated: 2024/02/21 18:21:24 by dkremer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
-#include <stdlib.h>
 
 void	keyhooks(mlx_key_data_t keydata, void *param)
 {

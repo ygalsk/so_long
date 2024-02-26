@@ -17,7 +17,8 @@ MLXFLAGS = -ldl -lglfw -pthread -lm
 SRCS     = map.c check.c find_stuff.c free_and_quit.c keyhooks.c main.c textures.c
 
 SRCS_BONUS = ./bonus/map_bonus.c ./bonus/check_bonus.c ./bonus/find_stuff_bonus.c ./bonus/free_and_quit_bonus.c \
-						 ./bonus/keyhooks_bonus.c ./bonus/main_bonus.c ./bonus/textures_bonus.c ./bonus/screen_msgs.c ./bonus/animations.c
+						 ./bonus/keyhooks_bonus.c ./bonus/main_bonus.c ./bonus/textures_bonus.c ./bonus/screen_msgs.c ./bonus/animations.c \
+						 ./bonus/animations_utils.c ./bonus/textures_utils.c ./bonus/free_utils.c
  
 # Header files
 HEADER  = libft/libft.a

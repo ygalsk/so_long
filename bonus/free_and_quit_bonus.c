@@ -6,7 +6,7 @@
 /*   By: dkremer <dkremer@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/17 17:03:36 by dkremer           #+#    #+#             */
-/*   Updated: 2024/02/18 19:16:35 by dkremer          ###   ########.fr       */
+/*   Updated: 2024/02/26 19:52:39 by dkremer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,26 +27,21 @@ void	free_map(t_game *game)
 
 void	free_img(t_game *game)
 {
-	mlx_delete_texture(game->exit_texture);
-	mlx_delete_texture(game->wall_texture);
-	mlx_delete_texture(game->colle_texture);
-	mlx_delete_texture(game->floor_texture);
-	mlx_delete_texture(game->player_texture1);
-	mlx_delete_texture(game->player_texture2);
-	mlx_delete_texture(game->player_texture3);
-	mlx_delete_texture(game->player_texture4);
-	mlx_delete_image(game->mlx, game->exit_images);
-	mlx_delete_image(game->mlx, game->wall_images);
-	mlx_delete_image(game->mlx, game->colle_images);
-	mlx_delete_image(game->mlx, game->floor_images);
-	mlx_delete_image(game->mlx, game->screen_moves);
-	mlx_delete_image(game->mlx, game->screen_collectibles);
-	mlx_delete_image(game->mlx, game->screen_msg);
-	mlx_delete_image(game->mlx, game->player_images1);
-	mlx_delete_image(game->mlx, game->player_images2);
-	mlx_delete_image(game->mlx, game->player_images3);
-	mlx_delete_image(game->mlx, game->player_images4);
+	mlx_delete_texture(game->texture->exit_texture);
+	mlx_delete_texture(game->texture->wall_texture);
+	mlx_delete_texture(game->texture->colle_texture);
+	mlx_delete_texture(game->texture->floor_texture);
+	mlx_delete_image(game->mlx, game->image->player);
+	mlx_delete_image(game->mlx, game->image->exit_images);
+	mlx_delete_image(game->mlx, game->image->wall_images);
+	mlx_delete_image(game->mlx, game->image->colle_images);
+	mlx_delete_image(game->mlx, game->image->floor_images);
+	mlx_delete_image(game->mlx, game->image->screen_moves);
+	mlx_delete_image(game->mlx, game->image->screen_collectibles);
+	mlx_delete_image(game->mlx, game->image->screen_msg);
 	mlx_close_window(game->mlx);
+	delete_player_texture(game);
+	delete_player_image(game);
 	free_map(game);
 	free_f_map(game);
 }
@@ -67,6 +62,9 @@ void	free_f_map(t_game *game)
 int	quit_game(t_game *game)
 {
 	free_img(game);
+	free(game->player);
+	free(game->texture);
+	free(game->image);
 	free(game);
 	exit(EXIT_SUCCESS);
 }

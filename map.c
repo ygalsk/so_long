@@ -6,7 +6,7 @@
 /*   By: dkremer <dkremer@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 16:11:42 by dkremer           #+#    #+#             */
-/*   Updated: 2024/02/21 18:21:59 by dkremer          ###   ########.fr       */
+/*   Updated: 2024/02/29 18:08:50 by dkremer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	map_file_check(char *filename)
 	if (temp == NULL)
 		error("WRONG FILETYPE!");
 	else if (ft_strlen(temp) > 4)
-		error("WRONG FILE TYPE!");
+		error("WRONG FILETYPE!");
 	else
 		return ;
 }
@@ -47,7 +47,6 @@ void	save_map(char *file, t_game *game)
 {
 	int	fd;
 
-	game->map_temp = NULL;
 	fd = open(file, O_RDONLY);
 	if (fd < 0)
 		error("READING FROM FD FAILED!");

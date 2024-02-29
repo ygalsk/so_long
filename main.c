@@ -6,7 +6,7 @@
 /*   By: dkremer <dkremer@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 15:52:27 by dkremer           #+#    #+#             */
-/*   Updated: 2024/02/29 17:37:01 by dkremer          ###   ########.fr       */
+/*   Updated: 2024/02/29 17:55:15 by dkremer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,6 @@ int	main(int argc, char **argv)
 	if (!game)
 		error("MEMORY ALLOCATION FOR STRUCTURE FAILED");
 	save_map(argv[1], game);
-	find_c(game);
 	check_chars(game);
 	check_path(game);
 	game_init(game);

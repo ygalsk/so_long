@@ -6,7 +6,7 @@
 /*   By: dkremer <dkremer@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 13:55:40 by dkremer           #+#    #+#             */
-/*   Updated: 2024/02/29 17:36:12 by dkremer          ###   ########.fr       */
+/*   Updated: 2024/02/29 18:08:37 by dkremer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,11 +51,6 @@ int	render_img(t_game *game)
 		x = 0;
 		while (x < game->width)
 		{
-			if (game->map[y][x] == PLAYER)
-			{
-				game->player_posx = x;
-				game->player_posy = y;
-			}
 			image_in_map(x, y, game->map[y][x], game);
 			x++;
 		}

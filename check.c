@@ -6,7 +6,7 @@
 /*   By: dkremer <dkremer@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 17:22:36 by dkremer           #+#    #+#             */
-/*   Updated: 2024/02/16 19:44:26 by dkremer          ###   ########.fr       */
+/*   Updated: 2024/02/29 17:55:23 by dkremer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 void	check_chars(t_game *game)
 {
+	find_c(game);
 	find_ex(game);
 	find_player_position(game);
 	if (game->collectible == 0)

@@ -6,7 +6,7 @@
 /*   By: dkremer <dkremer@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/17 17:04:33 by dkremer           #+#    #+#             */
-/*   Updated: 2024/02/21 18:17:57 by dkremer          ###   ########.fr       */
+/*   Updated: 2024/02/29 18:09:42 by dkremer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,6 @@ void	save_map(char *file, t_game *game)
 {
 	int	fd;
 
-	game->map_temp = NULL;
 	fd = open(file, O_RDONLY);
 	if (fd < 0)
 		error("READING FROM FD FAILED!");

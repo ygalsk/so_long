@@ -6,7 +6,7 @@
 /*   By: dkremer <dkremer@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/17 16:57:32 by dkremer           #+#    #+#             */
-/*   Updated: 2024/02/29 15:31:31 by dkremer          ###   ########.fr       */
+/*   Updated: 2024/02/29 15:39:38 by dkremer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,6 @@ void	move_y(t_game *game, char key)
 		player_w(game);
 	if (key == S)
 		player_s(game);
-	ft_printf("Moves: %d\n", game->moves);
 	get_c(game);
 }
 
@@ -51,7 +50,6 @@ void	move_x(t_game *game, char key)
 		player_a(game);
 	if (key == D)
 		player_d(game);
-	ft_printf("Moves: %d\n", game->moves);
 	get_c(game);
 }
 

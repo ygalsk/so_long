@@ -6,7 +6,7 @@
 /*   By: dkremer <dkremer@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/18 19:59:13 by dkremer           #+#    #+#             */
-/*   Updated: 2024/02/29 15:31:30 by dkremer          ###   ########.fr       */
+/*   Updated: 2024/02/29 15:38:08 by dkremer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ void	player_w(t_game *game)
 	game->image->player_images2_1->instances->enabled = false;
 	game->image->player_images3->instances->enabled = false;
 	game->image->player_images3_1->instances->enabled = false;
+	ft_printf("Moves: %d\n", game->moves);
 }
 
 void	player_s(t_game *game)
@@ -47,6 +48,7 @@ void	player_s(t_game *game)
 	game->image->player_images3_1->instances->enabled = false;
 	game->image->player_images4->instances->enabled = false;
 	game->image->player_images4_1->instances->enabled = false;
+	ft_printf("Moves: %d\n", game->moves);
 }
 
 void	player_a(t_game *game)
@@ -66,6 +68,7 @@ void	player_a(t_game *game)
 	game->image->player_images1_2->instances->enabled = false;
 	game->image->player_images4->instances->enabled = false;
 	game->image->player_images4_1->instances->enabled = false;
+	ft_printf("Moves: %d\n", game->moves);
 }
 
 void	player_d(t_game *game)
@@ -85,4 +88,5 @@ void	player_d(t_game *game)
 	game->image->player_images3_1->instances->enabled = false;
 	game->image->player_images4->instances->enabled = false;
 	game->image->player_images4_1->instances->enabled = false;
+	ft_printf("Moves: %d\n", game->moves);
 }

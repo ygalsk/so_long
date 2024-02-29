@@ -6,7 +6,7 @@
 /*   By: dkremer <dkremer@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/18 15:40:52 by dkremer           #+#    #+#             */
-/*   Updated: 2024/02/21 19:32:00 by dkremer          ###   ########.fr       */
+/*   Updated: 2024/02/29 15:23:05 by dkremer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void	put_on_screen(t_game *game)
 	game->image->screen_moves = mlx_put_string(game->mlx, moves, 0, 0);
 	game->image->screen_collectibles = mlx_put_string(game->mlx, collects, 0, \
 			20);
-	if (game->collectible == 0)
+	if (game->left_collectible == 0)
 		game->image->screen_msg = mlx_put_string(game->mlx, msg, 10, 50);
 	free_screen_msg(moves, collects, temp_coll, temp_moves);
 	free(msg);

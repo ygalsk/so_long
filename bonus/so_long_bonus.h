@@ -6,7 +6,7 @@
 /*   By: dkremer <dkremer@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/17 17:06:47 by dkremer           #+#    #+#             */
-/*   Updated: 2024/02/26 19:52:34 by dkremer          ###   ########.fr       */
+/*   Updated: 2024/02/29 15:27:47 by dkremer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,10 +48,6 @@ typedef enum e_elements
 # define PLAYER3_1_PNG "./textures/player3_1.png"
 # define PLAYER4_PNG "./textures/player4.png"
 # define PLAYER4_1_PNG "./textures/player4_1.png"
-# define ENEMY1_PNG "./textures/enemy1.png"
-# define ENEMY2_PNG "./textures/enemy2.png"
-# define ENEMY3_PNG "./textures/enemy3.png"
-# define ENEMY4_PNG "./textures/enemy4.png"
 
 /* Game struct definition */
 
@@ -100,20 +96,6 @@ typedef struct s_player
 	int				player_pos_found;
 }					t_player;
 
-typedef struct s_enemy
-{
-	int				enemy_posx;
-	int				enemy_posy;
-	mlx_texture_t	*enemy_texture1;
-	mlx_texture_t	*enemy_texture2;
-	mlx_texture_t	*enemy_texture3;
-	mlx_texture_t	*enemy_texture4;
-	mlx_image_t		*enemy_images1;
-	mlx_image_t		*enemy_images2;
-	mlx_image_t		*enemy_images3;
-	mlx_image_t		*enemy_images4;
-}					t_enemy;
-
 typedef struct s_game
 {
 	mlx_t			*mlx;
@@ -127,7 +109,6 @@ typedef struct s_game
 	int				left_collectible;
 	int				ex_count;
 	char			*line;
-	t_enemy			*enemy;
 	t_player		*player;
 	t_texture		*texture;
 	t_image			*image;
@@ -137,7 +118,6 @@ void				error(char *str);
 void				load_image(t_game *img);
 void				load_player_image(t_game *game);
 void				load_player_image_2(t_game *game);
-void				image_to_win(int x, int y, char c, t_game *img);
 void				render_img(t_game *img);
 void				map_file_check(char *filename);
 int					quit_game(t_game *game);
@@ -175,8 +155,6 @@ void				player_d_util(t_game *game);
 void				load_player(t_game *game);
 void				load_player_2(t_game *game);
 void				chech_exit(t_game *game);
-void				loopHook(void *param);
-void				togglePlayerImage(t_game *game);
 void				delete_player_texture(t_game *game);
 void				delete_player_image(t_game *game);
 

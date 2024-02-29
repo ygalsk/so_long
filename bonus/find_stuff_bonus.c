@@ -6,7 +6,7 @@
 /*   By: dkremer <dkremer@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/17 17:02:57 by dkremer           #+#    #+#             */
-/*   Updated: 2024/02/29 18:09:20 by dkremer          ###   ########.fr       */
+/*   Updated: 2024/02/29 18:11:51 by dkremer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,8 @@ void	find_player_position(t_game *game)
 		{
 			if (game->map[y][x] == PLAYER)
 			{
+				game->player->player_posx = x;
+				game->player->player_posy = y;
 				game->player->player_pos_found++;
 			}
 			x++;

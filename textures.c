@@ -6,7 +6,7 @@
 /*   By: dkremer <dkremer@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 13:55:40 by dkremer           #+#    #+#             */
-/*   Updated: 2024/02/18 14:48:59 by dkremer          ###   ########.fr       */
+/*   Updated: 2024/02/29 15:35:39 by dkremer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	load_image(t_game *game)
 
 void	image_in_map(int x, int y, char c, t_game *game)
 {
-	if (c == FLOOR || c == EXIT || c == COLLECTIBLE || c == PLAYER)
+	if (c == FLOOR || c == EXIT || c == COLLECTIBLE || c == PLAYER || c == WALL)
 		mlx_image_to_window(game->mlx, game->floor_images, x * 64, y * 64);
 	if (c == EXIT)
 		mlx_image_to_window(game->mlx, game->exit_images, x * 64, y * 64);

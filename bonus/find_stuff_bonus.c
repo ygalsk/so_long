@@ -6,7 +6,7 @@
 /*   By: dkremer <dkremer@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/17 17:02:57 by dkremer           #+#    #+#             */
-/*   Updated: 2024/02/26 17:54:20 by dkremer          ###   ########.fr       */
+/*   Updated: 2024/02/29 16:15:45 by dkremer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -118,5 +118,6 @@ void	get_c(t_game *game)
 		}
 		ft_printf("Collectibles left: %d\n", game->left_collectible);
 	}
+	get_to_exit(game);
 	chech_exit(game);
 }

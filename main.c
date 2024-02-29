@@ -6,7 +6,7 @@
 /*   By: dkremer <dkremer@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 15:52:27 by dkremer           #+#    #+#             */
-/*   Updated: 2024/02/21 18:21:25 by dkremer          ###   ########.fr       */
+/*   Updated: 2024/02/29 17:37:01 by dkremer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,14 @@
 void	game_init(t_game *game)
 {
 	mlx_set_setting(MLX_STRETCH_IMAGE, true);
-	game->mlx = mlx_init(game->width * 64, game->height * 64, "so_long", true);
+	game->mlx = mlx_init(game->width * PIXEL, game->height * PIXEL, "so_long", \
+			true);
 	if (!game->mlx)
 		error("GAME INITIALIZATION FAILED!");
 	load_image(game);
 	render_img(game);
-	mlx_image_to_window(game->mlx, game->player_images, game->player_posx * 64, \
-											game->player_posy * 64);
+	mlx_image_to_window(game->mlx, game->player_images, game->player_posx \
+			* PIXEL, game->player_posy * PIXEL);
 	mlx_key_hook(game->mlx, keyhooks, game);
 	mlx_loop(game->mlx);
 }

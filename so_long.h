@@ -6,7 +6,7 @@
 /*   By: dkremer <dkremer@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 19:15:34 by dkremer           #+#    #+#             */
-/*   Updated: 2024/02/18 15:08:00 by dkremer          ###   ########.fr       */
+/*   Updated: 2024/02/29 17:34:34 by dkremer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ typedef enum e_elements
 	S	= 'S',
 	A	= 'A',
 	D	= 'D',
+	PIXEL = 64,
 }	t_elements;
 
 // define textures
